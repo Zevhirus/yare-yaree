@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ocean-navy: #003366;
+  --color-ocean-blue: #0055A4;
+  --color-ocean-accent: #0077B6;
+  --color-ocean-cyan: #0096C7;
+  --color-ocean-sky: #00B4D8;
+  --color-ocean-ice: #90E0EF;
+  --color-ocean-midnight: #031926;
+}
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-display: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #F8FAFC;
+    color: #0F172A;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.04em;
+  }
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 51, 102, 0.08);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 51, 102, 0.08);
+  box-shadow: 0 4px 20px -2px rgba(0, 51, 102, 0.04);
+}
+
+.glass-card-subtle {
+  background: rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 51, 102, 0.06);
+}
+
+.ocean-glow, .electric-glow {
+  box-shadow: 0 0 25px rgba(0, 119, 182, 0.35);
+}
+
+.ocean-glow-sm, .electric-glow-sm {
+  box-shadow: 0 0 12px rgba(0, 119, 182, 0.35);
+}
+
+.ocean-border, .electric-border {
+  border-color: rgba(0, 85, 164, 0.6);
+}
+
+/* Subtle futuristic background grid with faint ocean tint */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 51, 102, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 51, 102, 0.04) 1px, transparent 1px);
+}
+
+/* Smooth custom cursor styles */
+@media (pointer: fine) {
+  body.has-custom-cursor {
+    cursor: none;
+  }
+  body.has-custom-cursor a,
+  body.has-custom-cursor button,
+  body.has-custom-cursor input,
+  body.has-custom-cursor textarea,
+  body.has-custom-cursor [role="button"] {
+    cursor: none;
+  }
+}
+
+/* Lenis smooth scrolling rules */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+
+
